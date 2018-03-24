@@ -14,6 +14,8 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var MsgContainer: UIView!
     @IBOutlet weak var FeedContainer: UIView!
+    @IBOutlet weak var InvitationButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,12 @@ class ProfileViewController: UIViewController {
         FeedContainer.layer.cornerRadius = 25;
         FeedContainer.layer.borderWidth = 0.5
         FeedContainer.layer.borderColor = UIColor.clear.cgColor
+        
+        
+        InvitationButton.layer.cornerRadius = 35;
+        InvitationButton.layer.borderWidth = 0.5
+        InvitationButton.layer.borderColor = UIColor.clear.cgColor
+        
     }
 
     override func didReceiveMemoryWarning() {
