@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var UserImageView: UIImageView!
@@ -14,6 +15,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var PasswordUITextField: UITextField!
     @IBOutlet weak var LoginContainerView: UIView!
     @IBOutlet weak var SignInButton: RoundCornerButton!
+    var window: UIWindow?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +35,81 @@ class LoginViewController: UIViewController {
         LoginContainerView.layer.shadowColor = UIColor.lightGray.cgColor
         LoginContainerView.layer.shadowOpacity = 0.3
         
-//        SignInButton.layer.shadowRadius = 0.5
-//        SignInButton.layer.shadowColor = UIColor.lightGray.cgColor
-//        SignInButton.layer.shadowOpacity = 0.3
+    }
+    
+    func displayAlert(userMessage: String) {
+        let alert = UIAlertController(title:"Oops!", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
+        let alertAction = UIAlertAction(title:"Ok", style:UIAlertActionStyle.default, handler:nil);
+        alert.addAction(alertAction)
+        self.present(alert, animated: true, completion: nil)
     }
 
+    @IBAction func LoginButtonTapped(_ sender: Any) {
+        let userName = UserNameUITextField.text!;
+        let userPassword = PasswordUITextField.text!;
+// Fetch Data from UserDefaults
+//        let userEmailStored = UserDefaults.standard.string(forKey: "userEmail");
+//        let userPasswordStored = UserDefaults.standard.string(forKey: "userPassword");
+
+        
+//        print("userName = ", userName);
+//        print("userPassword = ", userPassword);
+//        print("userEmailStored = ", userEmailStored);
+//        print("userPasswordStored = ", userPasswordStored);
+        
+        
+//        if (userEmailStored == userName) {
+//            if (userPassword == userPasswordStored) {
+//                print("log in!")
+//                UserDefaults.standard.set(true, forKey: "isUserLoggedIn");
+//                UserDefaults.standard.synchronize();
+//
+//                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+////                appDelegate.window?.rootViewController = MapViewController
+//                appDelegate.window?.makeKeyAndVisible()
+//
+//
+//            }
+//        }
+        
+        let parameters = ["email" : userName, "password" : userPassword]
+        let url = "http://damianx-env.us-east-2.elasticbeanstalk.com/getToken"
+        var retStr = ""
+        
+        Alamofire.request(url, method:.post, parameters : parameters, encoding: URLEncoding.default).responseString { response in switch response.result {
+            case .success:
+            retStr = response.result.value!
+            print ("retStr: ", retStr)
+            if (retStr == "-1") {
+                self.displayAlert(userMessage: "The Password is incorrect!")
+                return
+            } else if (retStr == "-2") {
+                self.displayAlert(userMessage: "The Email Doesn't Exist!")
+                return
+            } else {
+                // Get loginToken from UserDefaults
+                UserDefaults.standard.set(retStr, forKey:"myLoginToken");
+                
+                // Get loginToken from UserDefaults
+//                let myLoginToken = UserDefaults.standard.string(forKey: "myLoginToken")!;
+//                print("myLoginToken: ", myLoginToken)
+                
+                print("Login Succeed!")
+                
+                
+                self.performSegue(withIdentifier: "mainTabView", sender: self)
+                
+                
+            }
+            break
+        case .failure(let error):
+            print (error)
+            break
+            }
+        }
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

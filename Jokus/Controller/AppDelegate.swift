@@ -13,9 +13,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+//        print("here!!!!")
+        
+//        var rootViewController = self.window!.rootViewController
+        
+        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        
+//         Get loginToken from UserDefaults
+        let myLoginToken = UserDefaults.standard.string(forKey: "myLoginToken");
+        print("myLoginToken: ", myLoginToken)
+
+        
+//        if let myLoginToken = UserDefaults.standard.string(forKey:"myLoginToken") {
+//        if (myLoginToken == nil) {
+        if (true) {
+//            let myLoginToken = UserDefaults.standard.string(forKey: "myLoginToken");
+//            print("myLoginToken: ", myLoginToken)
+
+            let loginViewController = mainStoryBoard.instantiateViewController(withIdentifier: "loginView") as! LoginViewController
+            
+            window!.rootViewController = loginViewController
+            window!.makeKeyAndVisible()
+        } else {
+//            print("myLoginToken: ", myLoginToken)
+//            print("00000000\n")
+            let mapPage = mainStoryBoard.instantiateViewController(withIdentifier: "mainTabBarView") as UIViewController
+//            print("11111111\n")
+            window!.rootViewController = mapPage
+            window!.makeKeyAndVisible()
+        }
+        
+        
+        
+        
+        
         return true
     }
 

@@ -22,6 +22,20 @@ class MapViewController: UIViewController {
     }
     
 
+    override func viewDidAppear(_ animated: Bool) {
+//        let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
+//
+//        if (!isUserLoggedIn) {
+//            print("isUserLoggedIn: false")
+//            self.performSegue(withIdentifier: "loginView", sender: self)
+//        }
+        
+        
+        
+        
+        
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -10,10 +10,24 @@ import UIKit
 
 class FeedViewController: UIViewController {
 
+    @IBOutlet weak var UserImageBtn: UIButton!
+    @IBOutlet weak var FriendImageBtn: UIButton!
+    
+    @IBOutlet weak var CommentContainer: UIView!
+    @IBOutlet weak var LikeContainer: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        LikeContainer.layer.cornerRadius = 20;
+        LikeContainer.layer.borderWidth = 0.5
+        LikeContainer.layer.borderColor = UIColor.clear.cgColor
+        
+        CommentContainer.layer.cornerRadius = 20;
+        CommentContainer.layer.borderWidth = 0.5
+        CommentContainer.layer.borderColor = UIColor.clear.cgColor
+        
     }
 
     override func didReceiveMemoryWarning() {
