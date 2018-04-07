@@ -57,6 +57,9 @@
 		18C100BC2058D0FB006DEEC4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		18C100BE2058D11F006DEEC4 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		18F07F4D2076012A00ED53B4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
+		46B9AA468FD79D3177AF9B1B /* Pods-Jokus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jokus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jokus/Pods-Jokus.debug.xcconfig"; sourceTree = "<group>"; };
+		62878BF60BC143EC36F0C9CA /* Pods-Jokus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jokus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jokus/Pods-Jokus.release.xcconfig"; sourceTree = "<group>"; };
+		7C40391CB1F1BB6E0AC95FBC /* libPods-Jokus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Jokus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 			children = (
 				18B35E2B2056233500BC1B03 /* Jokus */,
 				18B35E2A2056233500BC1B03 /* Products */,
+				AE3865C7CE53760AC7CBE95A /* Pods */,
+				61BFC9E293BC9AAE1975336B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,6 +147,23 @@
 			path = Jokus;
 			sourceTree = "<group>";
 		};
+		61BFC9E293BC9AAE1975336B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C40391CB1F1BB6E0AC95FBC /* libPods-Jokus.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE3865C7CE53760AC7CBE95A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				46B9AA468FD79D3177AF9B1B /* Pods-Jokus.debug.xcconfig */,
+				62878BF60BC143EC36F0C9CA /* Pods-Jokus.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,10 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18B35E3B2056233600BC1B03 /* Build configuration list for PBXNativeTarget "Jokus" */;
 			buildPhases = (
+				BE23C428FEE7D06C3312FD30 /* [CP] Check Pods Manifest.lock */,
 				18B35E252056233500BC1B03 /* Sources */,
 				18B35E262056233500BC1B03 /* Frameworks */,
 				18B35E272056233500BC1B03 /* Resources */,
 				18F07F512076016000ED53B4 /* Embed Frameworks */,
+				4626629BD02AF0F6BBE57E2B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -209,6 +233,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4626629BD02AF0F6BBE57E2B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Jokus/Pods-Jokus-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Jokus/Pods-Jokus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE23C428FEE7D06C3312FD30 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Jokus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		18B35E252056233500BC1B03 /* Sources */ = {
@@ -360,6 +425,7 @@
 		};
 		18B35E3C2056233600BC1B03 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46B9AA468FD79D3177AF9B1B /* Pods-Jokus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -378,6 +444,7 @@
 		};
 		18B35E3D2056233600BC1B03 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62878BF60BC143EC36F0C9CA /* Pods-Jokus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

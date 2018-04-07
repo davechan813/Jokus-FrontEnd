@@ -1,0 +1,6 @@
+source 'https://github.com/CocoaPods/Specs.git'
+target '/Users/czb/Desktop/Jokus Inc/Jokus/Jokus.xcodeproj' do
+    pod 'GoogleMaps'
+    pod 'GooglePlaces'
+end
+

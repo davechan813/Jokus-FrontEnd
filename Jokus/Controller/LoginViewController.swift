@@ -20,21 +20,34 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserImageView.layer.cornerRadius = UserImageView.frame.size.width / 2;
-        UserImageView.clipsToBounds = true
+//        UserImageView.layer.cornerRadius = UserImageView.frame.size.width / 2;
+//        UserImageView.clipsToBounds = true
         
-        UserNameUITextField.layer.borderWidth = 0.1
-        UserNameUITextField.layer.borderColor = UIColor.lightGray.cgColor
+//        UserNameUITextField.layer.borderWidth = 0.1
+//        UserNameUITextField.layer.borderColor = UIColor.lightGray.cgColor
+//
+//        PasswordUITextField.layer.borderWidth = 0.1
+//        PasswordUITextField.layer.borderColor = UIColor.lightGray.cgColor
+//
+//
+//        LoginContainerView.layer.masksToBounds = false
+//        LoginContainerView.layer.shadowRadius = 2.0
+//        LoginContainerView.layer.shadowColor = UIColor.lightGray.cgColor
+//        LoginContainerView.layer.shadowOpacity = 0.3
         
-        PasswordUITextField.layer.borderWidth = 0.1
-        PasswordUITextField.layer.borderColor = UIColor.lightGray.cgColor
         
         
-        LoginContainerView.layer.masksToBounds = false
-        LoginContainerView.layer.shadowRadius = 2.0
-        LoginContainerView.layer.shadowColor = UIColor.lightGray.cgColor
-        LoginContainerView.layer.shadowOpacity = 0.3
-        
+        let userImageData = UserDefaults.standard.value(forKey: "defaultUserImage")
+        let defaultUserEmail = UserDefaults.standard.value(forKey: "defaultUserEmail")
+        if (userImageData != nil) {
+            print("here")
+            let defaultUserImage = UIImage(data: userImageData as! Data)!
+            UserImageView.image = defaultUserImage
+        }
+        if (defaultUserEmail != nil) {
+            print("here")
+            UserNameUITextField.text = defaultUserEmail as? String
+        }
     }
     
     func displayAlert(userMessage: String) {
@@ -95,11 +108,7 @@ class LoginViewController: UIViewController {
 //                print("myLoginToken: ", myLoginToken)
                 
                 print("Login Succeed!")
-                
-                
                 self.performSegue(withIdentifier: "mainTabView", sender: self)
-                
-                
             }
             break
         case .failure(let error):

@@ -19,8 +19,8 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserImageView.layer.cornerRadius = UserImageView.frame.size.width / 2;
-        UserImageView.clipsToBounds = true
+//        UserImageView.layer.cornerRadius = UserImageView.frame.size.width / 2;
+//        UserImageView.clipsToBounds = true
         
         MsgContainer.layer.cornerRadius = 25;
         MsgContainer.layer.borderWidth = 0.5
@@ -34,6 +34,17 @@ class ProfileViewController: UIViewController {
         InvitationButton.layer.cornerRadius = 35;
         InvitationButton.layer.borderWidth = 0.5
         InvitationButton.layer.borderColor = UIColor.clear.cgColor
+        
+        
+        let userImageData = UserDefaults.standard.value(forKey: "defaultUserImage")
+        if (userImageData != nil) {
+            print("here")
+            let defaultUserImage = UIImage(data: userImageData as! Data)!
+            UserImageView.image = defaultUserImage
+        }
+        
+        
+        
         
     }
 
