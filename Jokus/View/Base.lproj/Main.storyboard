@@ -195,14 +195,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="197"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ku-Dn-SJL" userLabel="Return Button">
-                                        <rect key="frame" x="21" y="28" width="45" height="45"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <segue destination="T5r-40-CrN" kind="show" id="zc3-1M-FBk"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4th St. Park Basketball Court" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4z-nr-IOa">
                                         <rect key="frame" x="0.0" y="153" width="414" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -212,6 +204,14 @@
                                         <color key="shadowColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                         <size key="shadowOffset" width="0.0" height="2"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ku-Dn-SJL" userLabel="Return Button">
+                                        <rect key="frame" x="26" y="28" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="Back Arrow"/>
+                                        <connections>
+                                            <segue destination="T5r-40-CrN" kind="show" id="zc3-1M-FBk"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -310,15 +310,17 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Knx-GN-92A" userLabel="Uber Button">
+                                    <button opaque="NO" contentMode="bottom" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Knx-GN-92A" userLabel="Uber Button">
                                         <rect key="frame" x="68" y="37" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="Uber Icon"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pr8-jf-vu0" userLabel="Lyft Button">
-                                        <rect key="frame" x="121" y="37" width="40" height="40"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pr8-jf-vu0" userLabel="Lyft Button">
+                                        <rect key="frame" x="120" y="37" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="Lyft Icon"/>
                                     </button>
                                 </subviews>
                             </view>
@@ -399,7 +401,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uci-wV-z5Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4022" y="664"/>
+            <point key="canvasLocation" x="4021.739130434783" y="663.58695652173913"/>
         </scene>
         <!--Message Page View Controller-->
         <scene sceneID="b6S-T8-PKz">
@@ -419,11 +421,10 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSG-Ki-S3h" userLabel="Back Button">
-                                        <rect key="frame" x="35" y="43" width="40" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSG-Ki-S3h" userLabel="Back Button">
+                                        <rect key="frame" x="39" y="47" width="32" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal">
+                                        <state key="normal" image="Back Arrow">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -523,7 +524,7 @@
                                 <rect key="frame" x="0.0" y="89" width="414" height="245"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="taz-3u-3wq" userLabel="Background Image View">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Feed Background" translatesAutoresizingMaskIntoConstraints="NO" id="taz-3u-3wq" userLabel="Background Image View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="162"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.61546754839999995" green="0.16978776449999999" blue="0.1219213381" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -574,11 +575,10 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsr-qn-CIn" userLabel="Camera Button">
-                                        <rect key="frame" x="323" y="28" width="50" height="50"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsr-qn-CIn" userLabel="Camera Button">
+                                        <rect key="frame" x="347" y="37" width="32" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" image="Camera Icon"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.5" colorSpace="calibratedRGB"/>
@@ -594,14 +594,14 @@
                                         <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="年少的时光里，一定要多读书多看报，多谈恋爱多打炮！" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPJ-yE-R1h" userLabel="Post Content">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="年少的时光里，一定要多读书多看报！" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPJ-yE-R1h" userLabel="Post Content">
                                         <rect key="frame" x="85" y="21" width="312" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdI-XS-0dC" userLabel="User Image">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Feed Sample Image" translatesAutoresizingMaskIntoConstraints="NO" id="hdI-XS-0dC" userLabel="User Image">
                                         <rect key="frame" x="85" y="85" width="312" height="180"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1031,14 +1031,20 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Back Arrow" width="32" height="32"/>
         <image name="Basketball Icon" width="512" height="512"/>
+        <image name="Camera Icon" width="32" height="32"/>
         <image name="Court Picture" width="2177" height="1451"/>
         <image name="Fake Map" width="375" height="678"/>
+        <image name="Feed Background" width="4288" height="2848"/>
         <image name="Feed Icon" width="32" height="32"/>
+        <image name="Feed Sample Image" width="1100" height="619"/>
         <image name="Height Icon" width="128" height="128"/>
+        <image name="Lyft Icon" width="630" height="630"/>
         <image name="Message Icon" width="32" height="32"/>
         <image name="Pin Locate" width="512" height="512"/>
         <image name="Position Icon" width="32" height="32"/>
+        <image name="Uber Icon" width="400" height="400"/>
         <image name="User Image" width="128" height="128"/>
         <image name="Weight Icon" width="32" height="32"/>
         <image name="gender_male_icon" width="512" height="512"/>
@@ -1046,7 +1052,7 @@
         <image name="trophy" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zc3-1M-FBk"/>
+        <segue reference="Ash-WF-BPi"/>
         <segue reference="JAw-HJ-LfA"/>
         <segue reference="2pK-vu-OcG"/>
         <segue reference="yh2-z7-IAE"/>

@@ -14,7 +14,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let camera = GMSCameraPosition.camera(withLatitude: 52.520736, longitude: 13.409423, zoom: 12)
+//        let camera = GMSCameraPosition.camera(withLatitude: 52.520736, longitude: 13.409423, zoom: 12)
 
         
     }
@@ -34,7 +34,7 @@ class MapViewController: UIViewController {
     }
     
     
-    override func loadView() {
+//    override func loadView() {
 //        // Create a GMSCameraPosition that tells the map to display the
 //        // coordinate -33.86,151.20 at zoom level 6.
 //        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
@@ -51,7 +51,7 @@ class MapViewController: UIViewController {
 //        marker.title = "Sydney"
 //        marker.snippet = "Australia"
 //        marker.map = mapView
-    }
+//    }
     
     /*
     // MARK: - Navigation

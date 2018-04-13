@@ -29,8 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("myLoginToken: ", myLoginToken)
 
         
-        if (myLoginToken == nil) {
-//        if (true) {
+//        if (myLoginToken == nil) {
+        if (true) {
 //            let myLoginToken = UserDefaults.standard.string(forKey: "myLoginToken");
 //            print("myLoginToken: ", myLoginToken)
 

@@ -39,10 +39,10 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         let repeatPassword = RepeatPasswordTextField.text!;
         
 //                 Clear myLoginToken in UserDefault
-        UserDefaults.standard.removeObject(forKey:"defaultUserEmail")
-        UserDefaults.standard.removeObject(forKey:"defaultUserImage")
-        print("Clear All Data!")
-        
+//        UserDefaults.standard.removeObject(forKey:"defaultUserEmail")
+//        UserDefaults.standard.removeObject(forKey:"defaultUserImage")
+//        print("Clear All Data!")
+//
         // Check for empty field
         if (userEmail.isEmpty || userPassword.isEmpty || repeatPassword.isEmpty) {
             displayAlert(userMessage: "All fields are required!")
